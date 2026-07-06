@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enrol | Khan Tutoring</title>
+<meta name="description" content="Register for ATAR tutoring with Khan Tutoring. Mathematics Methods, Specialist, Chemistry, Human Biology — $300 per subject per term.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Spectral:wght@700&family=Archivo:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:14px;text-decoration:none;line-height:1;">
+  <img src="favicon-reversed.svg" width="44" height="48" alt="">
+  <span>
+    <span style="display:block;font-family:'Spectral',serif;font-weight:700;font-size:28px;color:#fff;letter-spacing:-.01em;">Khan</span>
+    <span style="display:block;font-family:'Archivo',sans-serif;font-weight:600;font-size:9px;letter-spacing:.5em;color:#B08D3A;text-transform:uppercase;margin-top:5px;">Tutoring</span>
+  </span>
+</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#subjects">Subjects</a></li>
+      <li><a href="index.html#timetable">Timetable</a></li>
+      <li><a href="index.html#resources">Resources</a></li>
+      <li><a href="register.html" class="active">Register</a></li>
+    </ul>
+    <a href="register.html" class="nav-cta">Enrol Now</a>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#about">About</a>
+    <a href="index.html#subjects">Subjects</a>
+    <a href="index.html#timetable">Timetable</a>
+    <a href="index.html#resources">Resources</a>
+    <a href="register.html">Register &amp; Enrol</a>
+  </div>
+</nav>
+
+<!-- ── REGISTER HERO ── -->
+<div class="register-hero">
+  <div class="container">
+    <div class="section-tag white-tag" style="margin-bottom:16px;">Enrolment</div>
+    <h1>Register for Term Tutoring</h1>
+    <p>Fill in your details below and hit Send — your registration goes straight to Saalik, no email app needed. We'll confirm your spot within 24 hours.</p>
+  </div>
+</div>
+
+<!-- ── REGISTER BODY ── -->
+<div class="container">
+  <div class="register-body">
+
+    <!-- Left info panel -->
+    <div class="reg-info">
+      <h2>What happens next?</h2>
+      <p>Fill in the form and hit <strong>Send Enrolment</strong> — your registration goes straight through to Saalik, no email app needed.</p>
+      <p>Saalik will reply within 24 hours to confirm your spot and send through the Zoom link for your first session.</p>
+
+      <div style="background:var(--gold-pale);border:1.5px solid var(--gold);border-radius:var(--radius);padding:18px 20px;margin-bottom:24px;">
+        <strong style="font-size:.92rem;">Trial period — no upfront payment</strong>
+        <p style="font-size:.88rem;color:var(--gray);margin-top:6px;">
+          The first 2 weeks are a free trial. Payment is only required after your Week 2 lesson —
+          for Term 3, this falls on <strong style="color:var(--navy);">Tuesday 28 July</strong>.
+          If it's not the right fit, you're under no obligation.
+        </p>
+      </div>
+
+      <div class="reg-details">
+        <div class="reg-detail">
+          <span>→</span>
+          <span>All sessions are online via Zoom — no travel needed</span>
+        </div>
+        <div class="reg-detail">
+          <span>→</span>
+          <span>Mon &amp; Tue evenings — see timetable for exact times</span>
+        </div>
+        <div class="reg-detail">
+          <span>→</span>
+          <span>1.5 hours per lesson &middot; 10 lessons per term</span>
+        </div>
+        <div class="reg-detail">
+          <span>→</span>
+          <span>From $300 per subject per term — invoiced before term starts</span>
+        </div>
+        <div class="reg-detail">
+          <span>→</span>
+          <span>Questions? Email <a href="mailto:saalik@khantutoring.com.au" style="color:var(--navy);font-weight:600">saalik@khantutoring.com.au</a></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Form -->
+    <div>
+      <form id="enrol-form" class="form-card"
+            action="https://formspree.io/f/maqgkwby"
+            method="POST">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="first-name">Student First Name *</label>
+            <input type="text" id="first-name" name="first-name" required placeholder="e.g. Jane">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Student Last Name *</label>
+            <input type="text" id="last-name" name="last-name" required placeholder="e.g. Smith">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="year-level">Year Level *</label>
+            <select id="year-level" name="year-level" required>
+              <option value="" disabled selected>Select…</option>
+              <option>Year 12</option>
+              <option disabled>Year 11 — Coming Soon</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="school">School</label>
+            <input type="text" id="school" name="school" placeholder="e.g. Perth Modern">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="parent-name">Parent / Guardian Name *</label>
+            <input type="text" id="parent-name" name="parent-name" required placeholder="e.g. John Smith">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="04XX XXX XXX">
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="email-student">Student Email *</label>
+            <input type="email" id="email-student" name="student-email" required placeholder="student@email.com">
+          </div>
+          <div class="form-group">
+            <label for="email-parent">Parent / Guardian Email *</label>
+            <input type="email" id="email-parent" name="parent-email" required placeholder="parent@email.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Home Address *</label>
+          <input type="text" id="address" name="address" required placeholder="e.g. 12 Example Street, Subiaco WA 6008">
+        </div>
+
+        <div class="form-group">
+          <label>Enrolment Term</label>
+          <div id="term-display" style="background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;font-size:.92rem;display:flex;justify-content:space-between;align-items:center;">
+            <span id="term-name" style="font-weight:700;"></span>
+            <span id="term-weeks" style="color:var(--gold);font-size:.82rem;"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Subject(s) *</label>
+          <div class="checkbox-list">
+            <label class="check-label">
+              <input type="checkbox" name="subjects" value="Mathematics Methods">
+              Mathematics Methods &nbsp;<span style="color:var(--gray);font-size:.82rem">Mon 6:00 – 7:30 pm</span>
+            </label>
+            <label class="check-label">
+              <input type="checkbox" name="subjects" value="Mathematics Specialist">
+              Mathematics Specialist &nbsp;<span style="color:var(--gray);font-size:.82rem">Mon 7:30 – 9:00 pm</span>
+            </label>
+            <label class="check-label">
+              <input type="checkbox" name="subjects" value="Chemistry">
+              Chemistry &nbsp;<span style="color:var(--gray);font-size:.82rem">Tue 6:00 – 7:30 pm</span>
+            </label>
+            <label class="check-label">
+              <input type="checkbox" name="subjects" value="Human Biology">
+              Human Biology &nbsp;<span style="color:var(--gray);font-size:.82rem">Tue 7:30 – 9:00 pm</span>
+            </label>
+          </div>
+        </div>
+
+        <div id="price-summary" style="display:none;background:var(--gold-pale);border:1.5px solid var(--gold);border-radius:10px;padding:16px 18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <span style="font-weight:700;font-size:.92rem;">Total Due This Term</span>
+            <span id="price-total" style="font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:900;color:var(--navy);"></span>
+          </div>
+          <p id="price-breakdown" style="font-size:.8rem;color:var(--gray);"></p>
+        </div>
+
+        <div id="form-error" style="display:none;background:#fee2e2;border:1px solid #f87171;border-radius:8px;padding:12px 16px;font-size:.88rem;color:#b91c1c;"></div>
+
+        <button type="submit" class="btn btn-gold btn-lg btn-block">
+          Send Enrolment →
+        </button>
+
+        <p class="form-note">
+          Your registration is sent directly — no email app needed. You'll receive a confirmation and Saalik will be in touch within 24 hours.
+        </p>
+      </form>
+
+      <div id="form-success" style="display:none;background:#d1fae5;border:1px solid #34d399;border-radius:var(--radius);padding:32px;text-align:center;margin-top:8px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">✅</div>
+        <h3 style="margin-bottom:8px;">Registration sent!</h3>
+        <p style="color:var(--gray);font-size:.92rem;">
+          Saalik will be in touch within 24 hours to confirm your spot and send through the Zoom details. Questions? Email <a href="mailto:saalik@khantutoring.com.au" style="color:var(--navy);font-weight:700">saalik@khantutoring.com.au</a>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:14px;text-decoration:none;line-height:1;">
+          <img src="favicon-reversed.svg" width="44" height="48" alt="">
+          <span>
+            <span style="display:block;font-family:'Spectral',serif;font-weight:700;font-size:28px;color:#fff;letter-spacing:-.01em;">Khan</span>
+            <span style="display:block;font-family:'Archivo',sans-serif;font-weight:600;font-size:9px;letter-spacing:.5em;color:#B08D3A;text-transform:uppercase;margin-top:5px;">Tutoring</span>
+          </span>
+        </a>
+        <p>Expert online ATAR tutoring for Year 12 students across WA. Mathematics Methods, Specialist, Chemistry and Human Biology.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html#about">About Saalik</a>
+        <a href="index.html#subjects">Subjects &amp; Pricing</a>
+        <a href="index.html#timetable">Timetable</a>
+        <a href="index.html#resources">Free Resources</a>
+        <a href="register.html">Enrol Now</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="mailto:saalik@khantutoring.com.au">saalik@khantutoring.com.au</a></p>
+        <p style="margin-top:8px;font-size:.85rem;color:rgba(255,255,255,.5)">Sessions held online via Zoom</p>
+        <p style="margin-top:4px;font-size:.8rem;color:rgba(255,255,255,.35)">
+          Mon &amp; Tue evenings &middot; 6:00 – 9:00 pm
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="footer-bottom">&copy; <span id="year"></span> Khan Tutoring. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
