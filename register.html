@@ -153,7 +153,7 @@
 
         <div class="form-group">
           <label for="address">Home Address *</label>
-          <input type="text" id="address" name="address" required placeholder="e.g. 12 Example Street, Subiaco WA 6008">
+          <input type="text" id="address" name="address" required placeholder="Start typing your address…" autocomplete="off">
         </div>
 
         <div class="form-group">
@@ -253,5 +253,52 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+(function() {
+  const input = document.getElementById('address');
+  if (!input) return;
+
+  const dropdown = document.createElement('ul');
+  dropdown.style.cssText = 'position:absolute;z-index:1000;background:#fff;border:1.5px solid var(--gold);border-radius:10px;margin-top:4px;padding:6px 0;list-style:none;width:100%;box-shadow:0 8px 24px rgba(15,28,63,.12);display:none;max-height:220px;overflow-y:auto;';
+  input.parentElement.style.position = 'relative';
+  input.parentElement.appendChild(dropdown);
+
+  let debounceTimer;
+
+  input.addEventListener('input', function() {
+    clearTimeout(debounceTimer);
+    const query = this.value.trim();
+    if (query.length < 4) { dropdown.style.display = 'none'; return; }
+    debounceTimer = setTimeout(() => fetchSuggestions(query), 300);
+  });
+
+  function fetchSuggestions(query) {
+    fetch(`https://nominatim.openstreetmap.org/search?format=json&countrycodes=au&addressdetails=1&limit=6&q=${encodeURIComponent(query)}`)
+      .then(r => r.json())
+      .then(results => {
+        dropdown.innerHTML = '';
+        if (!results.length) { dropdown.style.display = 'none'; return; }
+        results.forEach(r => {
+          const li = document.createElement('li');
+          li.textContent = r.display_name;
+          li.style.cssText = 'padding:10px 16px;cursor:pointer;font-size:.88rem;color:var(--navy);border-bottom:1px solid var(--gray-light);';
+          li.addEventListener('mouseenter', () => li.style.background = 'var(--gold-pale)');
+          li.addEventListener('mouseleave', () => li.style.background = '');
+          li.addEventListener('mousedown', () => {
+            input.value = r.display_name;
+            dropdown.style.display = 'none';
+          });
+          dropdown.appendChild(li);
+        });
+        dropdown.style.display = 'block';
+      })
+      .catch(() => { dropdown.style.display = 'none'; });
+  }
+
+  document.addEventListener('click', e => {
+    if (!input.parentElement.contains(e.target)) dropdown.style.display = 'none';
+  });
+})();
+</script>
 </body>
 </html>
