@@ -273,19 +273,19 @@
   });
 
   function fetchSuggestions(query) {
-    fetch(`https://nominatim.openstreetmap.org/search?format=json&countrycodes=au&addressdetails=1&limit=6&q=${encodeURIComponent(query)}`)
+    fetch(`https://api.addressify.com.au/addresspro/suggest?term=${encodeURIComponent(query)}&state=WA&max=6`)
       .then(r => r.json())
       .then(results => {
         dropdown.innerHTML = '';
         if (!results.length) { dropdown.style.display = 'none'; return; }
         results.forEach(r => {
           const li = document.createElement('li');
-          li.textContent = r.display_name;
+          li.textContent = r;
           li.style.cssText = 'padding:10px 16px;cursor:pointer;font-size:.88rem;color:var(--navy);border-bottom:1px solid var(--gray-light);';
           li.addEventListener('mouseenter', () => li.style.background = 'var(--gold-pale)');
           li.addEventListener('mouseleave', () => li.style.background = '');
           li.addEventListener('mousedown', () => {
-            input.value = r.display_name;
+            input.value = r;
             dropdown.style.display = 'none';
           });
           dropdown.appendChild(li);
